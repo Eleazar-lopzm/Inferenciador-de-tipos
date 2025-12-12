@@ -17,7 +17,7 @@ import TypeChecker
 
 ```haskell
 infer [] (parser (lexer "(+ 10 20 30)"))
-infer [] (parser (lexer "(not #t)"))
-infer [("x", TInt)] (parser (lexer "x"))
-infer [("f", TFun [TInt] TBool)] (parser (lexer "(f 10)"))
+infer [] (parser (lexer "(lambda (x) x)"))
+infer [] (parser (lexer "((lambda (x) (+ x 1)) #t)"))
+infer [] (parser (lexer "((lambda (f) (f 10)) (lambda (x) (+ x 1)))"))
 ```
