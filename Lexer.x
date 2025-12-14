@@ -19,42 +19,12 @@ tokens :-
     -- signos de puntuacion
     "("                   { \_ -> TokenLPar }
     ")"                   { \_ -> TokenRPar }
-    "["                   { \_ -> TokenLCor }
-    "]"                   { \_ -> TokenRCor }
-    ","                   { \_ -> TokenComa }
-
     -- operadores
-    "<="                  { \_ -> TokenOp "<=" }
-    ">="                  { \_ -> TokenOp ">=" }
-    "!="                  { \_ -> TokenOp "!=" }
     "+"                   { \_ -> TokenOp "+" }
-    "-"                   { \_ -> TokenOp "-" }
-    "*"                   { \_ -> TokenOp "*" }
-    "/"                   { \_ -> TokenOp "/" }
-    "<"                   { \_ -> TokenOp "<" }
-    ">"                   { \_ -> TokenOp ">" }
-    "="                   { \_ -> TokenOp "=" }
     
     -- palabras reservadas -> tokens específicos
     "not"                 { \_ -> TokenNot }
-    "letrec"              { \_ -> TokenLetRec }
-    "let*"                { \_ -> TokenLetStar }
-    "let"                 { \_ -> TokenLet }
-    "if0"                 { \_ -> TokenIf0 }
-    "if"                  { \_ -> TokenIf }
     "lambda"              { \_ -> TokenLambda }
-    "add1"                { \_ -> TokenAdd1 }
-    "sub1"                { \_ -> TokenSub1 }
-    "sqrt"                { \_ -> TokenSqrt }
-    "expt"                { \_ -> TokenExpt }
-    "head"                { \_ -> TokenHead }
-    "tail"                { \_ -> TokenTail }
-    "cond"                { \_ -> TokenCond }
-    "else"                { \_ -> TokenElse }
-    "fst"                 { \_ -> TokenFst }
-    "snd"                 { \_ -> TokenSnd }
-    "pair"                { \_ -> TokenPair }
-
 
     -- literales booleanas
     "#t"                  { \_ -> TokenBool True }
@@ -81,28 +51,9 @@ data Token
     | TokenBool Bool
     | TokenLPar
     | TokenRPar
-    | TokenLCor
-    | TokenRCor
-    | TokenComa
     | TokenOp String
-    | TokenCond
-    | TokenElse
-    | TokenLet
-    | TokenLetStar
-    | TokenLetRec
-    | TokenIf
-    | TokenIf0
-    | TokenLambda
-    | TokenAdd1
-    | TokenSub1
-    | TokenSqrt
-    | TokenExpt
-    | TokenHead
-    | TokenTail
     | TokenNot
-    | TokenFst
-    | TokenSnd
-    | TokenPair
+    | TokenLambda
     deriving (Show, Eq)
 
 -- para ejecutar el lexer
